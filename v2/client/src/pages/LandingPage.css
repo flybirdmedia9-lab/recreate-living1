@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+
+.sandria-shell {
+  /* Color Palette - Premium Dark Blue & Gold */
+  --navy-950: #050b14;
+  --navy-900: #0a192f;
+  --navy-800: #112240;
+  --navy-700: #233554;
+  --gold-500: #c5a059;
+  --gold-400: #d4b47a;
+  --gold-100: #f1e4c8;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --text-primary: #0a192f;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  min-height: 100vh;
+  color: var(--text-primary);
+  background: var(--white);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.sandria-shell * {
+  box-sizing: border-box;
+}
+
+.sandria-shell a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sandria-container {
+  width: min(1280px, 100% - 3rem);
+  margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Header & Nav */
+.sandria-topbar {
+  background: var(--navy-950);
+  color: var(--gold-100);
+  font-size: 0.85rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.sandria-topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sandria-topbar-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold-500);
+  font-weight: 600;
+}
+
+.sandria-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(10, 25, 47, 0.05);
+}
+
+.sandria-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sandria-logo-img {
+  height: 3.5rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.sandria-menu {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.sandria-menu a:hover {
+  color: var(--gold-500);
+}
+
+/* Hero Section */
+.sandria-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sandria-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sandria-hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.5s ease, transform 6s ease-out;
+}
+
+.sandria-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sandria-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.3) 100%);
+}
+
+.sandria-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
+  color: var(--white);
+}
+
+.sandria-kicker {
+  display: inline-block;
+  color: var(--gold-500);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.sandria-hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.sandria-hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--gold-500);
+  margin-bottom: 1.5rem;
+}
+
+.sandria-hero p:not(.sandria-hero-subtitle) {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+}
+
+/* Buttons */
+.sandria-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.sandria-btn-whatsapp {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.sandria-btn-whatsapp:hover {
+  background: #1ebc59;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+.sandria-btn-outline {
+  background: transparent;
+  border: 2px solid var(--navy-900);
+  color: var(--navy-900);
+}
+
+.sandria-btn-outline:hover {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+/* Section Headings */
+.sandria-section {
+  padding: 6rem 0;
+}
+
+.sandria-section-head {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.sandria-section-head h2 {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--navy-900);
+}
+
+.sandria-section-head p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Why Choose Us */
+.sandria-why-us {
+  background: var(--off-white);
+}
+
+.sandria-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.sandria-feature-item {
+  background: var(--white);
+  padding: 0;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(10, 25, 47, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sandria-feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.sandria-feature-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.sandria-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sandria-feature-item:hover .sandria-feature-image img {
+  transform: scale(1.05);
+}
+
+.sandria-feature-item p {
+  padding: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product Banner */
+.sandria-product-banner {
+  background: var(--navy-900);
+  color: var(--gold-500);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 1px solid var(--gold-500);
+}
+
+/* Categories */
+.sandria-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.sandria-category-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(10, 25, 47, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.sandria-category-carousel {
+  position: relative;
+  aspect-ratio: 3/2;
+}
+
+.sandria-category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sandria-category-info {
+  padding: 2rem;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sandria-category-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--navy-900);
+}
+
+.sandria-category-info p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+/* How It Works */
+.sandria-how-it-works {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+.sandria-how-it-works h2 {
+  color: var(--gold-500);
+}
+
+.sandria-how-it-works .sandria-section-head p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sandria-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  position: relative;
+}
+
+.sandria-step-card {
+  text-align: center;
+  position: relative;
+}
+
+.sandria-step-number {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto 1.5rem;
+}
+
+.sandria-step-card h3 {
+  margin-bottom: 1rem;
+  color: var(--gold-100);
+}
+
+.sandria-step-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Videos */
+.sandria-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.sandria-video-placeholder {
+  aspect-ratio: 16/9;
+  background: var(--navy-800);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid var(--gold-500);
+}
+
+.sandria-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(10, 25, 47, 0.4);
+  color: var(--white);
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.sandria-video-placeholder:hover .sandria-video-overlay {
+  background: rgba(10, 25, 47, 0.6);
+}
+
+/* About Section */
+.sandria-about-bg {
+  background: var(--off-white);
+}
+
+.sandria-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.sandria-about-image {
+  position: relative;
+}
+
+.sandria-about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.sandria-legacy-badge {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  background: var(--navy-900);
+  color: var(--gold-500);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 4px solid var(--gold-500);
+  box-shadow: var(--shadow-lg);
+}
+
+.sandria-legacy-badge span:first-child {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* WhatsApp CTA Section */
+.sandria-wa-cta {
+  background: var(--navy-900);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 4rem 2rem;
+  text-align: center;
+  border: 2px solid var(--gold-500);
+}
+
+.sandria-wa-cta h2 {
+  color: var(--gold-500);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sandria-response-time {
+  font-weight: 600;
+  color: var(--gold-400);
+  margin: 1.5rem 0 2.5rem;
+}
+
+/* Reviews */
+.sandria-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.sandria-review-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(10, 25, 47, 0.05);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.sandria-stars {
+  color: var(--gold-500);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Location */
+.sandria-location {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.sandria-address {
+  background: var(--navy-900);
+  color: var(--white);
+  padding: 4rem;
+}
+
+.sandria-address h3 {
+  color: var(--gold-500);
+  margin-bottom: 2rem;
+}
+
+.sandria-address-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sandria-address-item svg {
+  color: var(--gold-500);
+}
+
+/* Footer */
+.sandria-footer {
+  background: var(--navy-950);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5rem 0 2rem;
+}
+
+.sandria-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+
+.sandria-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sandria-footer-tagline {
+  color: var(--gold-500);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.sandria-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sandria-social a {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
+}
+
+.sandria-social a:hover {
+  background: var(--gold-500);
+  border-color: var(--gold-500);
+  color: var(--navy-900);
+}
+
+/* Floating WhatsApp */
+.sandria-float-wa {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: #25D366;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.sandria-float-wa:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sandria-about-grid, .sandria-location {
+    grid-template-columns: 1fr;
+  }
+  .sandria-address {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sandria-menu {
+    display: none;
+  }
+  .sandria-topbar-left {
+    display: none;
+  }
+  .sandria-section {
+    padding: 4rem 0;
+  }
+  .sandria-videos-grid {
+    grid-template-columns: 1fr;
+  }
+  .sandria-reviews {
+    grid-template-columns: 1fr;
+  }
+}
