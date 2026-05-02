@@ -16,8 +16,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
         return `${PASSWORD_PREFIX}:${salt}:${derivedKey}`;
     }
     
-    const newEmail = 'admin@recreateliving.com';
-    const newPassword = hashPassword('Recreate@2026');
+    const newEmail = 'admin@recreateliving.in';
+    const newPassword = hashPassword('12345');
     
     // Check if user exists, if so update, if not insert
     db.get('SELECT id FROM users WHERE email = ?', [newEmail], (err, row) => {
@@ -26,7 +26,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                 if (err) {
                     console.error('Error updating password', err.message);
                 } else {
-                    console.log(`Password for ${newEmail} has been updated to: Recreate@2026`);
+                    console.log(`Password for ${newEmail} has been updated to: 12345`);
                 }
                 db.close();
             });
@@ -35,7 +35,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
                 if (err) {
                     console.error('Error inserting admin', err.message);
                 } else {
-                    console.log(`New admin user created: ${newEmail} / Recreate@2026`);
+                    console.log(`New admin user created: ${newEmail} / 12345`);
                 }
                 db.close();
             });

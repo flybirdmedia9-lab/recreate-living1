@@ -3,8 +3,8 @@ const path = require('path');
 const crypto = require('crypto');
 
 const PASSWORD_PREFIX = 'scrypt';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'manager@recreateliving.com';
-const ADMIN_DEFAULT_PASSWORD = process.env.ADMIN_DEFAULT_PASSWORD || 'recreate123';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@recreateliving.in';
+const ADMIN_DEFAULT_PASSWORD = process.env.ADMIN_DEFAULT_PASSWORD || '12345';
 
 function hashPassword(plainPassword) {
     const salt = crypto.randomBytes(16).toString('hex');
