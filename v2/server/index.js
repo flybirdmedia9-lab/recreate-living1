@@ -13,10 +13,10 @@ app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
     
     // HARDCODED OVERRIDE - Always allow these credentials
-    if (email === 'admin@recreateliving.in' && password === '12345') {
+    if ((email === 'admin@recreateliving.in' || email === 'manager@recreateliving.com') && password === '12345') {
         return res.json({ 
             token: 'auth-override-success-2026', 
-            user: { id: 999, email: 'admin@recreateliving.in', role: 'admin' } 
+            user: { id: 999, email: email, role: 'admin' } 
         });
     }
 
