@@ -35,73 +35,57 @@ const CATEGORIES = [
     id: 'l-shape',
     title: 'L-Shape Sofas',
     description: 'Designed for modern living rooms with spacious and comfortable seating.',
-    images: ['/assets/lshape_premium.png', '/assets/lshape_2_1777355196505.png']
+    images: [
+      '/assets/lshape_premium.png',
+      '/assets/lshape_2_1777355196505.png',
+      '/assets/lshape_3_1777355212084.png',
+      '/assets/lshape_sofa_1_1777354147446.png',
+      '/assets/d45ea444-6ac3-4465-b1ff-52c86277912d.png'
+    ]
   },
   {
     id: 'recliners',
     title: 'Recliners',
     description: 'Experience next-level comfort with smooth and relaxing recliner sofas.',
-    images: ['/assets/recliner_luxury.png', '/assets/recliner_2_1777355235897.png']
+    images: [
+      '/assets/recliner_luxury.png',
+      '/assets/recliner_2_1777355235897.png',
+      '/assets/recliner_3_1777355255036.png',
+      '/assets/recliner_sofa_1_1777354165736.png'
+    ]
   },
   {
     id: 'sofa-sets',
     title: 'Sofa Sets (3+2 / 3+1+1)',
     description: 'Classic combinations for complete family seating.',
-    images: ['/assets/sofa_set_premium.png', '/assets/classic_2_1777355644500.png']
+    images: [
+      '/assets/sofa_set_premium.png',
+      '/assets/classic_2_1777355644500.png',
+      '/assets/classic_3_1777355661512.png',
+      '/assets/classic_sofa_1_1777354382396.png'
+    ]
   },
   {
     id: 'sofa-cum-bed',
     title: 'Smart Sofa-Cum-Beds',
     description: 'Seamlessly transition from lounging to sleeping with our space-saving designs.',
-    images: ['/assets/sofa_cum_bed_premium.png', '/assets/sofacumbed_2_1777355271573.png']
-  },
-  {
-    id: 'compact',
-    title: 'Compact & 2-Seaters',
-    description: 'Stylish solutions for cozy corners and smaller living spaces.',
-    images: ['/assets/compact_sofa_premium.png']
-  },
-  {
-    id: 'chesterfield',
-    title: 'Classic Chesterfields',
-    description: 'Timeless deep-buttoned designs for a touch of royal elegance.',
-    images: ['/assets/classic_sofa_1_1777354382396.png']
-  },
-  {
-    id: 'sectionals',
-    title: 'Modern Sectionals',
-    description: 'Versatile modular designs that adapt to your evolving living space.',
-    images: ['/assets/gallery_1_1777357521937.png']
+    images: [
+      '/assets/sofa_cum_bed_premium.png',
+      '/assets/sofacumbed_2_1777355271573.png',
+      '/assets/sofacumbed_3_1777355288408.png',
+      '/assets/sofa_cum_bed_1_1777354186459.png'
+    ]
   },
   {
     id: 'custom-sofas',
     title: 'Bespoke Custom Sofas',
     description: 'Handcrafted masterpieces built exactly to your vision and dimensions.',
-    images: ['/assets/custom_sofa_1_1777354400516.png']
-  },
-  {
-    id: 'loungers',
-    title: 'Luxury Loungers',
-    description: 'Sink into pure relaxation with our premium lounge sofa collections.',
-    images: ['/assets/classy_sofa_about_1777356024211.png']
-  },
-  {
-    id: 'armchairs',
-    title: 'Designer Armchairs',
-    description: 'The perfect companion for your sofa, crafted for individual comfort.',
-    images: ['/assets/gallery_2_1777357538506.png']
-  },
-  {
-    id: 'tadepalli-special',
-    title: 'Heritage Collections',
-    description: 'Special edition designs reflecting our 35 years of Tadepalli legacy.',
-    images: ['/assets/craftsmanship_1_1777355799994.png']
-  },
-  {
-    id: 'corner-units',
-    title: 'Corner Sofa Units',
-    description: 'Smart space-saving solutions for the modern urban living room.',
-    images: ['/assets/lshape_3_1777355212084.png']
+    images: [
+      '/assets/custom_premium.png',
+      '/assets/custom_2_1777355679358.png',
+      '/assets/custom_3_1777355695866.png',
+      '/assets/custom_sofa_1_1777354400516.png'
+    ]
   }
 ];
 
@@ -207,7 +191,7 @@ export default function LandingPage() {
       <nav className="sandria-nav">
         <div className="sandria-container sandria-nav-inner">
           <a href="#" className="sandria-brand">
-            <img src="/assets/logo_gold.png" alt="ReCreate Living" className="sandria-logo-img" />
+            <img src="/assets/full_logo_gold.png" alt="ReCreate Living" className="sandria-logo-img" />
           </a>
           <div className="sandria-menu">
             <a href="#collections">Collections</a>
@@ -239,7 +223,7 @@ export default function LandingPage() {
             <p>Bespoke L-shape sofas, recliners, and luxury sets designed to elevate your home comfort.</p>
             
             <a
-              href={whatsappLink('Hi, I am interested in your premium sofa collections.')}
+              href={whatsappLink('Hi ReCreate Living, I want to order a sofa.')}
               target="_blank"
               rel="noreferrer"
               className="sandria-btn sandria-btn-whatsapp"
@@ -288,13 +272,13 @@ export default function LandingPage() {
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="sandria-category-card">
                 <div className="sandria-category-image-wrapper">
-                  <img src={cat.images[0]} alt={cat.title} className="sandria-category-img-static" />
+                  <ImageCarousel images={cat.images} />
                 </div>
                 <div className="sandria-category-info">
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
                   <a
-                    href={whatsappLink(`Hi, I am interested in ${cat.title}. Can you share more details and pricing?`)}
+                    href={whatsappLink(`Hi ReCreate Living, I want to order a ${cat.title} sofa.`)}
                     target="_blank"
                     rel="noreferrer"
                     className="sandria-btn-pricing"
@@ -490,7 +474,7 @@ export default function LandingPage() {
         <div className="sandria-container">
           <div className="sandria-footer-top">
             <div className="sandria-footer-brand">
-              <img src="/assets/logo_white.png" alt="ReCreate Living" className="sandria-logo-img" />
+              <img src="/assets/full_logo_gold.png" alt="ReCreate Living" className="sandria-logo-img" />
               <p className="sandria-footer-tagline">Crafted for Comfort & The Palagani Legacy</p>
             </div>
             

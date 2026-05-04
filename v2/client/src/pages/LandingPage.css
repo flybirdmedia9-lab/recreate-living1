@@ -2,18 +2,18 @@
 
 .sandria-shell {
   /* Color Palette - Premium Dark Blue & Gold */
-  --navy-950: #050b14;
+  --navy-950: #020617;
   --navy-900: #0a192f;
-  --navy-800: #112240;
-  --navy-700: #233554;
+  --navy-800: #1e293b;
+  --navy-700: #334155;
   --gold-500: #c5a059;
   --gold-400: #d4b47a;
-  --gold-100: #f1e4c8;
+  --gold-100: #fef9c3;
   --white: #ffffff;
   --off-white: #f8fafc;
-  --text-primary: #0a192f;
+  --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-muted: #64748b;
+  --text-muted: #94a3b8;
   
   --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
@@ -66,7 +66,7 @@ p {
   background: var(--navy-950);
   color: var(--gold-100);
   font-size: 0.85rem;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid rgba(197, 160, 89, 0.2);
 }
 
@@ -88,10 +88,8 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 1rem 0;
+  background: var(--white);
+  padding: 0.4rem 0;
   border-bottom: 1px solid rgba(197, 160, 89, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -103,7 +101,7 @@ p {
 }
 
 .sandria-logo-img {
-  height: 4.5rem; /* Increased for better visibility */
+  height: 7rem; /* Significantly increased for better branding */
   width: auto;
   object-fit: contain;
   display: block;
@@ -130,8 +128,7 @@ p {
 /* Hero Section */
 .sandria-hero {
   position: relative;
-  height: 90vh;
-  min-height: 600px;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -168,6 +165,7 @@ p {
   z-index: 10;
   max-width: 700px;
   color: var(--white);
+  text-align: left; /* Explicitly left aligned */
 }
 
 .sandria-kicker {
@@ -183,6 +181,7 @@ p {
 .sandria-hero h1 {
   font-size: clamp(3rem, 6vw, 4.5rem);
   margin-bottom: 1rem;
+  color: var(--white);
 }
 
 .sandria-hero-subtitle {
@@ -209,32 +208,28 @@ p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.sandria-btn-whatsapp {
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  color: white;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-  padding: 1.1rem 2.5rem;
-  font-size: 1.05rem;
+.sandria-btn-pricing {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.5rem;
+  border: 1.5px solid var(--gold-500);
+  border-radius: 9999px;
+  color: var(--gold-500);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
 }
 
-.sandria-btn-whatsapp:hover {
-  background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
-}
-
-.sandria-btn-outline {
-  background: transparent;
-  border: 1.5px solid var(--navy-900);
-  color: var(--navy-900);
-  padding: 0.8rem 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-}
-
-.sandria-btn-outline:hover {
-  background: var(--navy-900);
+.sandria-btn-pricing:hover {
+  background: var(--gold-500);
   color: var(--white);
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
 }
 
 /* Section Headings */
@@ -349,23 +344,24 @@ p {
 
 .sandria-category-card {
   background: var(--white);
-  border-radius: 2rem;
+  border-radius: 2.5rem;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
+  height: 100%;
 }
 
 .sandria-category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(10, 25, 47, 0.12);
 }
 
 .sandria-category-image-wrapper {
-  padding: 1.25rem 1.25rem 0 1.25rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 .sandria-category-img-static {
@@ -416,8 +412,105 @@ p {
 }
 
 .sandria-btn-pricing:hover {
-  background: #0a192f;
+  background: var(--navy-900);
+  border-color: var(--navy-900);
   color: white;
+}
+
+/* WhatsApp Buttons */
+.sandria-btn-whatsapp {
+  background: #25D366;
+  color: white;
+  padding: 1.1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.sandria-btn-whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+/* Category Carousel */
+.sandria-category-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.sandria-category-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
+.sandria-category-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sandria-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy-900);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.sandria-carousel-nav:hover {
+  background: var(--gold-500);
+  color: white;
+}
+
+.sandria-carousel-nav.prev { left: 0.75rem; }
+.sandria-carousel-nav.next { right: 0.75rem; }
+
+.sandria-carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.sandria-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sandria-dot.active {
+  background: var(--white);
+  width: 1.25rem;
+  border-radius: 9999px;
 }
 
 /* How It Works */
