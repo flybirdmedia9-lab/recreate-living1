@@ -34,11 +34,8 @@ function LoginPage({ onLogin }) {
     <div className="login-bg">
       <div className="login-card">
         <div className="login-logo">
-          <span className="logo-icon">R</span>
-          <div>
-            <h1>ReCreate Living</h1>
-            <p>Admin Portal</p>
-          </div>
+          <img src="/assets/logo_gold.png" alt="ReCreate Living" className="admin-full-logo" />
+          <p>Admin Portal</p>
         </div>
         <form onSubmit={handleSubmit} className="login-form">
           <div className="field-group">
@@ -83,11 +80,8 @@ function Sidebar({ active, setActive, user, onLogout }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <span className="logo-icon sm">R</span>
-        <div>
-          <strong>ReCreate Living</strong>
-          <span>Admin Panel</span>
-        </div>
+        <img src="/assets/logo_gold.png" alt="ReCreate Living" className="admin-full-logo sm" />
+        <span>Admin Panel</span>
       </div>
       <nav className="sidebar-nav">
         {NAV.map(n => (

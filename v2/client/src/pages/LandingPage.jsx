@@ -35,76 +35,106 @@ const CATEGORIES = [
     id: 'l-shape',
     title: 'L-Shape Sofas',
     description: 'Designed for modern living rooms with spacious and comfortable seating.',
-    images: ['/assets/lshape_premium.png']
+    images: ['/assets/lshape_premium.png', '/assets/lshape_2_1777355196505.png']
   },
   {
     id: 'recliners',
     title: 'Recliners',
     description: 'Experience next-level comfort with smooth and relaxing recliner sofas.',
-    images: ['/assets/recliner_luxury.png']
+    images: ['/assets/recliner_luxury.png', '/assets/recliner_2_1777355235897.png']
   },
   {
     id: 'sofa-sets',
     title: 'Sofa Sets (3+2 / 3+1+1)',
     description: 'Classic combinations for complete family seating.',
-    images: ['/assets/sofa_set_premium.png']
+    images: ['/assets/sofa_set_premium.png', '/assets/classic_2_1777355644500.png']
   },
   {
     id: 'sofa-cum-bed',
-    title: 'Sofa Cum Beds',
-    description: 'Smart designs that convert into beds for added convenience.',
-    images: ['/assets/sofa_cum_bed_premium.png']
-  },
-  {
-    id: 'custom',
-    title: 'Custom Sofas',
-    description: 'Have a design in mind? We’ll build it exactly for you.',
-    images: ['/assets/custom_premium.png']
-  },
-  {
-    id: 'premium-luxury',
-    title: 'Premium / Luxury Sofas',
-    description: 'Elegant, high-end designs crafted for a premium look and feel.',
-    images: ['/assets/lshape_premium.png'] 
+    title: 'Smart Sofa-Cum-Beds',
+    description: 'Seamlessly transition from lounging to sleeping with our space-saving designs.',
+    images: ['/assets/sofa_cum_bed_premium.png', '/assets/sofacumbed_2_1777355271573.png']
   },
   {
     id: 'compact',
-    title: 'Compact Sofas / 2-Seaters',
-    description: 'Perfect for smaller spaces without compromising on comfort.',
+    title: 'Compact & 2-Seaters',
+    description: 'Stylish solutions for cozy corners and smaller living spaces.',
     images: ['/assets/compact_sofa_premium.png']
+  },
+  {
+    id: 'chesterfield',
+    title: 'Classic Chesterfields',
+    description: 'Timeless deep-buttoned designs for a touch of royal elegance.',
+    images: ['/assets/classic_sofa_1_1777354382396.png']
+  },
+  {
+    id: 'sectionals',
+    title: 'Modern Sectionals',
+    description: 'Versatile modular designs that adapt to your evolving living space.',
+    images: ['/assets/gallery_1_1777357521937.png']
+  },
+  {
+    id: 'custom-sofas',
+    title: 'Bespoke Custom Sofas',
+    description: 'Handcrafted masterpieces built exactly to your vision and dimensions.',
+    images: ['/assets/custom_sofa_1_1777354400516.png']
+  },
+  {
+    id: 'loungers',
+    title: 'Luxury Loungers',
+    description: 'Sink into pure relaxation with our premium lounge sofa collections.',
+    images: ['/assets/classy_sofa_about_1777356024211.png']
+  },
+  {
+    id: 'armchairs',
+    title: 'Designer Armchairs',
+    description: 'The perfect companion for your sofa, crafted for individual comfort.',
+    images: ['/assets/gallery_2_1777357538506.png']
+  },
+  {
+    id: 'tadepalli-special',
+    title: 'Heritage Collections',
+    description: 'Special edition designs reflecting our 35 years of Tadepalli legacy.',
+    images: ['/assets/craftsmanship_1_1777355799994.png']
+  },
+  {
+    id: 'corner-units',
+    title: 'Corner Sofa Units',
+    description: 'Smart space-saving solutions for the modern urban living room.',
+    images: ['/assets/lshape_3_1777355212084.png']
   }
 ];
 
 const WHY_CHOOSE_US = [
-  { image: '/assets/feat_custom.png', text: 'Custom-made designs tailored to your space' },
-  { image: '/assets/feat_materials.png', text: 'Premium quality materials' },
-  { image: '/assets/feat_frames.png', text: 'Strong, durable frames' },
-  { image: '/assets/feat_comfort.png', text: 'Superior comfort & finishing' },
-  { image: '/assets/feat_legacy.png', text: '35+ years of trusted craftsmanship' },
-  { image: '/assets/feat_factory.png', text: 'Direct from manufacturer (no middlemen)' }
+  { image: '/assets/feat_custom.png', text: 'Bespoke designs tailored for you' },
+  { image: '/assets/feat_materials.png', text: 'Finest hand-picked materials' },
+  { image: '/assets/feat_frames.png', text: 'Engineered for durability' },
+  { image: '/assets/feat_comfort.png', text: 'Unmatched ergonomic comfort' },
+  { image: '/assets/feat_legacy.png', text: '35+ Years Palagani Craftsmanship' },
+  { image: '/assets/feat_factory.png', text: 'Direct from our design studio' }
 ];
 
 const HOW_IT_WORKS = [
-  { step: 1, title: 'Share your requirement', desc: 'Send us your space details or a design reference.' },
-  { step: 2, title: 'Get design + price', desc: 'We provide a personalized quote and design options.' },
-  { step: 3, title: 'We build & deliver', desc: 'Your dream sofa is handcrafted and delivered.' }
+  { step: 1, title: 'Consultation', desc: 'Share your vision, space requirements, or reference designs with our experts.' },
+  { step: 2, title: 'Design & Quote', desc: 'Receive a personalized design proposal and a transparent, direct price.' },
+  { step: 3, title: 'Handcrafting', desc: 'Our master craftsmen bring your dream sofa to life with precision and care.' }
 ];
 
 const REVIEWS = [
   {
     name: 'Srinivas R.',
     location: 'Vijayawada',
-    text: 'Beautiful finish and exact on-time installation. The custom L-shape we ordered fits perfectly in our living room. Highly recommended!'
+    text: 'The premium finish and comfort exceeded our expectations. Our custom L-shape is the highlight of our home.'
   },
   {
     name: 'Meghana K.',
     location: 'Tadepalli',
-    text: 'We shared a custom layout from Pinterest and they delivered exactly as promised. The velvet fabric quality is exceptional.'
+    text: 'They brought our Pinterest inspiration to life perfectly. The quality of the velvet and the frame is outstanding.'
   },
   {
     name: 'Rahul & Family',
     location: 'Guntur',
-    text: 'Comfort, look and service all excellent. Our living room setup feels premium now. The 35 years of experience really shows in their finishing.'
+    text: 'A truly premium experience. The 35 years of Palagani legacy is evident in every stitch and detail.'
   }
 ];
 
@@ -155,7 +185,7 @@ export default function LandingPage() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4000);
+    }, 5000);
     return () => window.clearInterval(intervalId);
   }, []);
 
@@ -165,10 +195,10 @@ export default function LandingPage() {
       <header className="sandria-topbar">
         <div className="sandria-container sandria-topbar-inner">
           <div className="sandria-topbar-left">
-            <span>Vijayawada & Tadepalli's Premium Furniture Studio</span>
+            <span>The Palagani Legacy — Crafting Comfort for 35+ Years</span>
           </div>
           <div className="sandria-topbar-contact">
-            <a href={`tel:${CONTACT_PHONE}`}><Phone size={14} /> Call Us: {CONTACT_PHONE}</a>
+            <a href={`tel:${CONTACT_PHONE}`}><Phone size={14} /> {CONTACT_PHONE}</a>
           </div>
         </div>
       </header>
@@ -181,9 +211,9 @@ export default function LandingPage() {
           </a>
           <div className="sandria-menu">
             <a href="#collections">Collections</a>
-            <a href="#about">Our Story</a>
+            <a href="#about">Legacy</a>
             <a href="#how-it-works">Process</a>
-            <a href="#location">Visit Us</a>
+            <a href="#location">Studio</a>
           </div>
         </div>
       </nav>
@@ -202,20 +232,22 @@ export default function LandingPage() {
         </div>
         
         <div className="sandria-container sandria-hero-content">
-          <span className="sandria-kicker">The Palagani Legacy</span>
-          <h1>Your Dream Sofa, Handcrafted.</h1>
-          <p className="sandria-hero-subtitle">Crafted for Comfort</p>
-          <p>Custom sofas, recliners & sofa sets — made exactly for your space.</p>
-          
-          <a
-            href={whatsappLink('Hi, I would like to know more about your sofa collections.')}
-            target="_blank"
-            rel="noreferrer"
-            className="sandria-btn sandria-btn-whatsapp"
-          >
-            <MessageCircle size={20} />
-            Chat with us
-          </a>
+          <div className="sandria-hero-text-wrap">
+            <span className="sandria-kicker">ReDefine Your Living Space</span>
+            <h1>Premium Handcrafted Sofas.</h1>
+            <p className="sandria-hero-subtitle">Elegance in Every Stitch</p>
+            <p>Bespoke L-shape sofas, recliners, and luxury sets designed to elevate your home comfort.</p>
+            
+            <a
+              href={whatsappLink('Hi, I am interested in your premium sofa collections.')}
+              target="_blank"
+              rel="noreferrer"
+              className="sandria-btn sandria-btn-whatsapp"
+            >
+              <MessageCircle size={20} />
+              Explore Collections
+            </a>
+          </div>
         </div>
       </section>
 
@@ -248,13 +280,16 @@ export default function LandingPage() {
           </div>
           
           <div className="sandria-product-banner">
-            <p>👉 All sofas are Customizable & Made to Order | Choose your size, fabric, color & comfort level</p>
+            <p>✨ Masterpieces Crafted for You | 100% Customizable Sofas ✨</p>
+            <span>Choose your fabric, density, size, and style to match your vision.</span>
           </div>
 
           <div className="sandria-categories">
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="sandria-category-card">
-                <ImageCarousel images={cat.images} />
+                <div className="sandria-category-image-wrapper">
+                  <img src={cat.images[0]} alt={cat.title} className="sandria-category-img-static" />
+                </div>
                 <div className="sandria-category-info">
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
@@ -262,7 +297,7 @@ export default function LandingPage() {
                     href={whatsappLink(`Hi, I am interested in ${cat.title}. Can you share more details and pricing?`)}
                     target="_blank"
                     rel="noreferrer"
-                    className="sandria-btn sandria-btn-outline"
+                    className="sandria-btn-pricing"
                   >
                     Get Pricing
                   </a>
