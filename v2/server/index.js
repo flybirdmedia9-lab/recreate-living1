@@ -107,6 +107,10 @@ app.post('/api/teams', (req, res) => {
     );
 });
 
-app.listen(port, () => {
-    console.log(`Backend server running on http://localhost:${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Backend server running on http://localhost:${port}`);
+    });
+}
+
+module.exports = app;

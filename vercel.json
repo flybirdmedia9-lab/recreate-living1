@@ -1,11 +1,12 @@
 {
+  "version": 2,
   "buildCommand": "cd v2/client && npm install && npm run build",
   "installCommand": "cd v2/client && npm install",
   "outputDirectory": "v2/client/dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/v2/server/index.js"
+      "destination": "v2/server/index.js"
     },
     {
       "source": "/(.*)",
